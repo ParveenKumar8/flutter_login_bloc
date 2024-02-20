@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Image.asset('assets/images/signin_balls.png'),
               const Text(
-                'Sign in.',
+                'Sign In',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 50,
@@ -58,6 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 20),
               const GradientButton(),
+              const SizedBox(height: 20),
             ],
           ),
         ),
