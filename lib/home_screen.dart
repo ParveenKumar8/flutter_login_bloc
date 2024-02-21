@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final String successMsg;
+  const HomeScreen({
+    super.key,
+    required this.successMsg,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text("Hello!!! Home Screen."),
+        child: Text("Hello!!! Encrypted Data is $successMsg."),
       ),
     );
   }
