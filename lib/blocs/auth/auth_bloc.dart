@@ -6,7 +6,7 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
-    on<AuthLoginRequested>((event, emit) {
+    on<AuthLoginRequested>((event, emit) async {
       emit(AuthLoading());
       try {
         String email = event.email;
@@ -24,7 +24,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         if (password.length < 6) {
           emit(AuthError("Password length should be more than 6 characters."));
         }
-        Future.delayed(const Duration(seconds: 3));
+        await Future.delayed(const Duration(seconds: 3), () {
+          print("3 seconds passed.");
+        });
         emit(AuthSuccess('$email - $password'));
       } catch (e) {
         emit(AuthError(e.toString()));
