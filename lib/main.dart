@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => AuthBloc(),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Login',
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Pallete.backgroundColor,
         ),
